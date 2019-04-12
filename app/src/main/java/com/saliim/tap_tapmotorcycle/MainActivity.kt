@@ -104,35 +104,6 @@ class MainActivity : AppCompatActivity() {
                     image.visibility = View.INVISIBLE
                 }
 
-                val builder = AlertDialog.Builder(this@MainActivity)
-                builder.setTitle("Time's Up")
-                builder.setMessage("Your Final Score is $score")
-                builder.setPositiveButton("Play Again"){dialog, which ->
-
-                    time_bfr_play.visibility = View.VISIBLE
-                    timeText.visibility = View.VISIBLE
-                    score = 0
-                    timeText.text = "Time: 10"
-
-                    object : CountDownTimer(3000, 1000){
-                        override fun onFinish() {
-                            time_bfr_play.visibility = View.INVISIBLE
-                            hideImages()
-                            startGame()
-                        }
-
-                        override fun onTick(millisUntilFinished: Long) {
-                            time_bfr_play.text = "" + millisUntilFinished / 1000
-                        }
-                    }.start()
-                }
-                builder.setNegativeButton("Quit"){dialog, which ->
-                    finish()
-                }
-
-                val dialog: AlertDialog = builder.create()
-                dialog.show()
-
             }
 
             override fun onTick(millisUntilFinished: Long) {
