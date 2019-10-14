@@ -12,7 +12,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
-
+    
+   //Inisialisasi
     private var toolbar: Toolbar? = null
 
     var score : Int = 0
