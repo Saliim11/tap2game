@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //initialization for toolbar
         toolbar = findViewById<View>(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
         supportActionBar!!.title = "Tap Tap MotorCycle"
@@ -64,6 +65,7 @@ class MainActivity : AppCompatActivity() {
         //btn score action
         btn_score.setOnClickListener {
 
+            //Alert dialog builder
             val builder = AlertDialog.Builder(this@MainActivity)
             builder.setTitle("Score")
             builder.setMessage("Your Final Score is $score.\nDo You Want to Play Again?")
@@ -140,7 +142,7 @@ class MainActivity : AppCompatActivity() {
         handler.post(runnable)
 
     }
-
+    //when score added
     fun increaseScore(view: View){
         score++
 
