@@ -33,13 +33,15 @@ class MainActivity : AppCompatActivity() {
         supportActionBar!!.title = "Tap Tap MotorCycle"
 
         score = 0
-
+        
+        //Dummy data array
         imageArray = arrayListOf(honda1, honda2, honda3, honda4, honda5, honda6, honda7, honda8, honda9)
 
         for (image in imageArray){
             image.visibility = View.INVISIBLE
         }
-
+        
+        //btn action
         btn_play.setOnClickListener {
             btn_play.visibility = View.INVISIBLE
             black_bg.visibility = View.INVISIBLE
@@ -58,7 +60,8 @@ class MainActivity : AppCompatActivity() {
             }.start()
 
         }
-
+        
+        //btn score action
         btn_score.setOnClickListener {
 
             val builder = AlertDialog.Builder(this@MainActivity)
@@ -94,6 +97,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    //function to start
     fun startGame(){
         object : CountDownTimer(10000, 1000){
             override fun onFinish() {
@@ -113,7 +117,8 @@ class MainActivity : AppCompatActivity() {
         }.start()
 
     }
-
+    
+    //function to hide images
     fun hideImages(){
 
         runnable = object : Runnable{
